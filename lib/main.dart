@@ -26,36 +26,68 @@ class Home extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Local Market',
+        title: Text(
+          'Local Market',
           style: TextStyle(
-          color: Colors.white,
+            color: Colors.white,
           ),
         ),
-        leading: Icon(Icons.menu, color: Colors.white,),
-
+        leading: Icon(
+          Icons.menu,
+          color: Colors.white,
+        ),
         actions: [
-          IconButton(onPressed: (){
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Money has been sent successfully!'),),);
-          }, icon: Icon(Icons.add), color: Colors.white,),
-          IconButton(onPressed: (){
-            showDialog(context: context, builder: (context) {
-              return AlertDialog(
-                title: Text('Are you sure?'),
-                content: Text('Do you want to exit app?'),
-                actions: [
-                  TextButton(onPressed: (){
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Yes'),),);
-                  }, child: Text('Yes'),),
-                  TextButton(onPressed: (){
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('No'),),);
-                  }, child: Text('No'),)
-                ],
+          IconButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Money has been sent successfully!'),
+                  backgroundColor: Colors.green,
+                  duration: Duration(seconds: 1),
+                ),
               );
-            });
-          }, icon: Icon(Icons.exit_to_app), color: Colors.white,)
+            },
+            icon: Icon(Icons.add),
+            color: Colors.white,
+          ),
+          IconButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('Are you sure?'),
+                      content: Text('Do you want to exit app?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Yes'),
+                              ),
+                            );
+                          },
+                          child: Text('Yes'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('No'),
+                              ),
+                            );
+                          },
+                          child: Text('No'),
+                        )
+                      ],
+                    );
+                  });
+            },
+            icon: Icon(Icons.exit_to_app),
+            color: Colors.white,
+          )
         ],
       ),
-
       body: Center(
         /*  child: Text(
           'Hey this is Rukon, I have started new flutter course. I want build my dream app with flutter',
@@ -88,7 +120,7 @@ class Home extends StatelessWidget {
             Text('World From Rukon'),
             Text('and From'),
             Text('Rukon'),
-            
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,14 +153,221 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           children: [
-            ElevatedButton(onPressed: (){
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Elevated Button'),),);
-            }, child: Text('Elevated Button'))
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shadowColor: Colors.black,
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: Colors.orange, width: 2),
+                  ),
+                  textStyle:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20)),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Elevated Button'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              child: Text('Elevated Button'),
+            ),
+            TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.orange,
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    )),
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Text Button'),
+                      backgroundColor: Colors.orange,
+                      duration: Duration(seconds: 1),
+                    ),
+                  );
+                },
+                child: Text('Text Button')),
+            IconButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Icon Button'),
+                      backgroundColor: Colors.blue,
+                      duration: Duration(seconds: 1),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.add_circle_outline_rounded)),
+            GestureDetector(
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Tab pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              onDoubleTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Double tab pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              onLongPress: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Long pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              child: Column(
+                children: [Text('Add a photo'), Icon(Icons.add_a_photo)],
+              ),
+            ),
+            InkWell(
+              splashColor: Colors.orange,
+              radius: 10,
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Tab pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              onDoubleTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Double tab pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              onLongPress: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('on Long pressed'),
+                    backgroundColor: Colors.green,
+                    duration: Duration(seconds: 1),
+                  ),
+                );
+              },
+              child: Column(
+                children: [Text('Add a alarm'), Icon(Icons.add_alarm_rounded)],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+           //     controller: TextEditingController(),
+           //     enabled: false,
+                onChanged: (value) {
+              //    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Text Button'), backgroundColor: Colors.orange, duration: Duration(seconds: 1),),);
+                },
+                maxLength: 11,
+                style: TextStyle(fontSize: 16, color: Colors.green,),
+                decoration: InputDecoration(
+                    hintText: 'Enter your crush name',
+                    hintStyle:
+                        TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    labelText: 'Crush Name',
+                    labelStyle: TextStyle(
+                        color: Colors.green,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(width: 2, color: Colors.green),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(width: 2, color: Colors.green),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10)),
+                        borderSide:
+                            BorderSide(width: 1.5, color: Colors.orange)),
+                    disabledBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.horizontal(left: Radius.circular(10)),
+                        borderSide: BorderSide(width: 1, color: Colors.grey)),
+                    fillColor: Colors.green.shade50,
+                    filled: true,
+              /*    prefix: Column(
+                    children: [
+                      Icon(Icons.add),
+                      Icon(Icons.phone),
+                      Icon(Icons.email),
+                    ],
+                  ),
+
+                  suffix: Column(
+                    children: [
+                      Icon(Icons.password),
+                      Icon(Icons.numbers),
+                      Icon(Icons.remove_red_eye),
+                    ],
+                  ),*/
+
+                  prefixIcon: Icon(Icons.person, color: Colors.green, size: 30,),
+                  suffixIcon: Icon(Icons.remove_red_eye, color: Colors.red,),
+
+
+                ),
+
+              ),
+            ),
+
+            Container(
+              width: 100,
+              height: 100,
+              child: Text('Rukon', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Colors.red, width: 1),
+             /*   border: Border(
+                  top: BorderSide(width: 2, color: Colors.black),
+                  bottom: BorderSide(width: 2, color: Colors.red),
+                  left: BorderSide(width: 2, color: Colors.blue),
+                  right: BorderSide(width: 2, color: Colors.yellow),
+                ),*/
+                image: DecorationImage(
+                  image: AssetImage('images/rukon.jpg'),
+                  fit: BoxFit.fill
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.9),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3)
+                  )
+                ]
+              ),
+            ),
           ],
         ),
-
       ),
     );
   }
