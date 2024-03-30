@@ -28,36 +28,42 @@ class Home extends StatelessWidget {
     'Riya',
   ];
 
+  MySnackBar(message, context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
+
+  int bottomIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           'Local Market',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        leading: Icon(
-          Icons.menu,
+        centerTitle: false,
+        titleSpacing: 10,
+        toolbarHeight: 50,
+        toolbarOpacity: 1,
+        elevation: 10,
+        backgroundColor: Colors.green,
+       /* leading: IconButton(
+          icon: Icon(Icons.menu),
           color: Colors.white,
-        ),
+          onPressed: () {
+            MySnackBar('I am leading icon', context);
+          },
+        ),*/
         actions: [
-          IconButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Money has been sent successfully!'),
-                  backgroundColor: Colors.green,
-                  duration: Duration(seconds: 1),
-                ),
-              );
-            },
-            icon: Icon(Icons.add),
-            color: Colors.white,
-          ),
           IconButton(
             onPressed: () {
               showDialog(
@@ -93,11 +99,130 @@ class Home extends StatelessWidget {
             },
             icon: Icon(Icons.exit_to_app),
             color: Colors.white,
-          )
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar('I am comment', context);
+            },
+            icon: Icon(Icons.comment),
+            color: Colors.white,
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar('I am settings', context);
+            },
+            icon: Icon(Icons.settings),
+            color: Colors.white,
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar('I am search', context);
+            },
+            icon: Icon(Icons.search),
+            color: Colors.white,
+          ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          MySnackBar('I am floating action button', context);
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        backgroundColor: Colors.green,
+        elevation: 10,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: bottomIndex,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
+          BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
+        ],
+
+        onTap: (int index){
+          if(index == 0){
+            MySnackBar("Chats", context);
+            bottomIndex = 0;
+          }
+          if(index == 1){
+            MySnackBar("Updates", context);
+            bottomIndex = 1;
+          }
+          if(index == 2){
+            MySnackBar("Calls", context);
+            bottomIndex = 2;
+          }
+        },
+
+      ),
+      drawer: Drawer(
+        // backgroundColor: Colors.deepOrange,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+                child: UserAccountsDrawerHeader(
+                  accountName: Text('Rukon'),
+                  accountEmail: Text('frrukonsarkar@gmail.com'),
+                  currentAccountPicture: CircleAvatar(
+                    radius: 100,
+                    backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
+                  ),
+                  currentAccountPictureSize: Size(70, 70),
+                  onDetailsPressed: (){MySnackBar('This is my profile', context);},
+                ),
+            
+            ),
+            
+            
+            
+            ListTile(title: Text('Home'),leading: Icon(Icons.home), onTap: (){MySnackBar('This is home', context);},),
+            ListTile(title: Text('Contact'), leading: Icon(Icons.contact_emergency),onTap: (){MySnackBar('This is contact', context);}),
+            ListTile(title: Text('Profile'), leading: Icon(Icons.person),onTap: (){MySnackBar('This is profile', context);}),
+            ListTile(title: Text('Email'), leading: Icon(Icons.email),onTap: (){MySnackBar('This is email', context);},),
+            ListTile(title: Text('phone'), leading: Icon(Icons.phone), onTap: (){MySnackBar('This is phone', context);},),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
+        // backgroundColor: Colors.deepOrange,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
+                accountName: Text('Rukon'),
+                accountEmail: Text('frrukonsarkar@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  radius: 100,
+                  backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
+                ),
+                currentAccountPictureSize: Size(70, 70),
+                onDetailsPressed: (){MySnackBar('This is my profile', context);},
+              ),
+
+            ),
+
+
+
+            ListTile(title: Text('Home'),leading: Icon(Icons.home), onTap: (){MySnackBar('This is home', context);},),
+            ListTile(title: Text('Contact'), leading: Icon(Icons.contact_emergency),onTap: (){MySnackBar('This is contact', context);}),
+            ListTile(title: Text('Profile'), leading: Icon(Icons.person),onTap: (){MySnackBar('This is profile', context);}),
+            ListTile(title: Text('Email'), leading: Icon(Icons.email),onTap: (){MySnackBar('This is email', context);},),
+            ListTile(title: Text('phone'), leading: Icon(Icons.phone), onTap: (){MySnackBar('This is phone', context);},),
+          ],
+        ),
+      ),
+
+      // body
       /*   body: Center(
-        */ /*  child: Text(
+        */
+
+      //Text
+      /*  child: Text(
           'Hey this is Rukon, I have started new flutter course. I want build my dream app with flutter',
           maxLines: 2,
           style: TextStyle(
@@ -117,9 +242,10 @@ class Home extends StatelessWidget {
           fit: BoxFit.scaleDown,
         ),
         // child: Image.asset('images/rukon.jpg', width: 200, height: 300, fit: BoxFit.scaleDown,),
-       */ /*
+       */
 
-        */ /*       child: Column(
+      //Column
+      /*       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -156,8 +282,10 @@ class Home extends StatelessWidget {
               ],
             )
           ],
-        ),*/ /*
+        ),*/
 
+      // Column
+      /*
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -320,7 +448,10 @@ class Home extends StatelessWidget {
                         borderSide: BorderSide(width: 1, color: Colors.grey)),
                     fillColor: Colors.green.shade50,
                     filled: true,
-              */ /*    prefix: Column(
+              */
+
+      // prefix & suffix
+      /*    prefix: Column(
                     children: [
                       Icon(Icons.add),
                       Icon(Icons.phone),
@@ -334,7 +465,10 @@ class Home extends StatelessWidget {
                       Icon(Icons.numbers),
                       Icon(Icons.remove_red_eye),
                     ],
-                  ),*/ /*
+                  ),*/
+
+      // prefixIcon & suffixIcon
+      /*
 
                   prefixIcon: Icon(Icons.person, color: Colors.green, size: 30,),
                   suffixIcon: Icon(Icons.remove_red_eye, color: Colors.red,),
@@ -354,12 +488,18 @@ class Home extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.red, width: 1),
-             */ /*   border: Border(
+             */
+
+      //Border
+      /*   border: Border(
                   top: BorderSide(width: 2, color: Colors.black),
                   bottom: BorderSide(width: 2, color: Colors.red),
                   left: BorderSide(width: 2, color: Colors.blue),
                   right: BorderSide(width: 2, color: Colors.yellow),
-                ),*/ /*
+                ),*/
+
+      //DecorationImage
+      /*
                 image: DecorationImage(
                   image: AssetImage('images/rukon.jpg'),
                   fit: BoxFit.fill
@@ -378,6 +518,7 @@ class Home extends StatelessWidget {
         ),
       ),*/
 
+      //SingleChildScrollView
       /*  body: SingleChildScrollView(
         child: Column(
           children: [
@@ -394,6 +535,7 @@ class Home extends StatelessWidget {
         ),
       )*/
 
+      //ListView
       /*  body: ListView(
         children: [
           Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
@@ -430,6 +572,7 @@ class Home extends StatelessWidget {
         ],
       ),*/
 
+      //ListView.builder
       /*  body: ListView.builder(
           itemCount: 50,
           itemBuilder: (context, index){
@@ -437,12 +580,14 @@ class Home extends StatelessWidget {
         return Text('${index+1}', style: TextStyle(fontSize: 20),);
       }),*/
 
+      //ListView.builder
       /* body: ListView.builder(
           itemCount: studentList.length,
           itemBuilder: (context, index) {
             return Text(studentList[index]);
           }),*/
 
+      //ListView.builder
       /* body: ListView.builder(
           itemCount: studentList.length,
           itemBuilder: (context, index) {
@@ -450,6 +595,7 @@ class Home extends StatelessWidget {
             child: Text(studentList[index]));
           }),*/
 
+      //ListView.separated
       /*  body: ListView.separated(
           itemBuilder: (context, index){
             return Center(child: Text(studentList[index]));
@@ -465,6 +611,7 @@ class Home extends StatelessWidget {
           },
           itemCount: studentList.length),*/
 
+      //GridView
       /*body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: [
           Text('Rukon', style: TextStyle(color: Colors.white, backgroundColor: Colors.green),),
@@ -476,7 +623,8 @@ class Home extends StatelessWidget {
         ],
       ),*/
 
-      body: SingleChildScrollView(
+      //SingleChildScrollView & ListView.separated & GridView.builder
+      /* body: SingleChildScrollView(
         child: Column(
           children: [
             ListView.separated(
@@ -535,7 +683,8 @@ class Home extends StatelessWidget {
                 }),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }
+
