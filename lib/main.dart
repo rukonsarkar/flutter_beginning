@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'First App',
       debugShowCheckedModeBanner: false,
       home: Home(),
@@ -18,7 +19,14 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  List<String> studentList = [
+    'Rukon',
+    'Mim',
+    'Konika',
+    'Aklima',
+    'Liza',
+    'Riya',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +96,8 @@ class Home extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        /*  child: Text(
+      /*   body: Center(
+        */ /*  child: Text(
           'Hey this is Rukon, I have started new flutter course. I want build my dream app with flutter',
           maxLines: 2,
           style: TextStyle(
@@ -109,9 +117,9 @@ class Home extends StatelessWidget {
           fit: BoxFit.scaleDown,
         ),
         // child: Image.asset('images/rukon.jpg', width: 200, height: 300, fit: BoxFit.scaleDown,),
-       */
+       */ /*
 
-        /*       child: Column(
+        */ /*       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -148,7 +156,7 @@ class Home extends StatelessWidget {
               ],
             )
           ],
-        ),*/
+        ),*/ /*
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -312,7 +320,7 @@ class Home extends StatelessWidget {
                         borderSide: BorderSide(width: 1, color: Colors.grey)),
                     fillColor: Colors.green.shade50,
                     filled: true,
-              /*    prefix: Column(
+              */ /*    prefix: Column(
                     children: [
                       Icon(Icons.add),
                       Icon(Icons.phone),
@@ -326,7 +334,7 @@ class Home extends StatelessWidget {
                       Icon(Icons.numbers),
                       Icon(Icons.remove_red_eye),
                     ],
-                  ),*/
+                  ),*/ /*
 
                   prefixIcon: Icon(Icons.person, color: Colors.green, size: 30,),
                   suffixIcon: Icon(Icons.remove_red_eye, color: Colors.red,),
@@ -346,12 +354,12 @@ class Home extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.red, width: 1),
-             /*   border: Border(
+             */ /*   border: Border(
                   top: BorderSide(width: 2, color: Colors.black),
                   bottom: BorderSide(width: 2, color: Colors.red),
                   left: BorderSide(width: 2, color: Colors.blue),
                   right: BorderSide(width: 2, color: Colors.yellow),
-                ),*/
+                ),*/ /*
                 image: DecorationImage(
                   image: AssetImage('images/rukon.jpg'),
                   fit: BoxFit.fill
@@ -366,6 +374,165 @@ class Home extends StatelessWidget {
                 ]
               ),
             ),
+          ],
+        ),
+      ),*/
+
+      /*  body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+            Text('Rukon'),
+          ],
+        ),
+      )*/
+
+      /*  body: ListView(
+        children: [
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+          Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+
+        ],
+      ),*/
+
+      /*  body: ListView.builder(
+          itemCount: 50,
+          itemBuilder: (context, index){
+
+        return Text('${index+1}', style: TextStyle(fontSize: 20),);
+      }),*/
+
+      /* body: ListView.builder(
+          itemCount: studentList.length,
+          itemBuilder: (context, index) {
+            return Text(studentList[index]);
+          }),*/
+
+      /* body: ListView.builder(
+          itemCount: studentList.length,
+          itemBuilder: (context, index) {
+            return Padding(padding: EdgeInsets.all(16),
+            child: Text(studentList[index]));
+          }),*/
+
+      /*  body: ListView.separated(
+          itemBuilder: (context, index){
+            return Center(child: Text(studentList[index]));
+          },
+          separatorBuilder: (context, index){
+            return Divider(
+              color: Colors.orange,
+              height: 20,
+              thickness: 2,
+              endIndent: 20,
+              indent: 20,
+            );
+          },
+          itemCount: studentList.length),*/
+
+      /*body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        children: [
+          Text('Rukon', style: TextStyle(color: Colors.white, backgroundColor: Colors.green),),
+          Text('Mim'),
+          Text('Konika'),
+          Text('Riya'),
+          Text('Aklima'),
+          Text('Liza'),
+        ],
+      ),*/
+
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListView.separated(
+                shrinkWrap: true,
+                primary: false,
+                itemBuilder: (context, index) {
+                  return Center(child: Text(studentList[index]));
+                },
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    color: Colors.green,
+                    height: 20,
+                    thickness: 2,
+                    endIndent: 20,
+                    indent: 20,
+                  );
+                },
+                itemCount: studentList.length),
+            GridView.builder(
+                itemCount: 100,
+                shrinkWrap: true,
+                primary: false,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 10),
+                itemBuilder: (context, index) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Roll - ${index + 1}',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                }),
           ],
         ),
       ),
