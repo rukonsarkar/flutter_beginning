@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
         toolbarOpacity: 1,
         elevation: 10,
         backgroundColor: Colors.green,
-       /* leading: IconButton(
+        /* leading: IconButton(
           icon: Icon(Icons.menu),
           color: Colors.white,
           onPressed: () {
@@ -141,22 +141,20 @@ class Home extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.update), label: 'Updates'),
           BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
         ],
-
-        onTap: (int index){
-          if(index == 0){
+        onTap: (int index) {
+          if (index == 0) {
             MySnackBar("Chats", context);
             bottomIndex = 0;
           }
-          if(index == 1){
+          if (index == 1) {
             MySnackBar("Updates", context);
             bottomIndex = 1;
           }
-          if(index == 2){
+          if (index == 2) {
             MySnackBar("Calls", context);
             bottomIndex = 2;
           }
         },
-
       ),
       drawer: Drawer(
         // backgroundColor: Colors.deepOrange,
@@ -164,26 +162,53 @@ class Home extends StatelessWidget {
           children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
-                child: UserAccountsDrawerHeader(
-                  accountName: Text('Rukon'),
-                  accountEmail: Text('frrukonsarkar@gmail.com'),
-                  currentAccountPicture: CircleAvatar(
-                    radius: 100,
-                    backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
-                  ),
-                  currentAccountPictureSize: Size(70, 70),
-                  onDetailsPressed: (){MySnackBar('This is my profile', context);},
+              child: UserAccountsDrawerHeader(
+                accountName: Text('Rukon'),
+                accountEmail: Text('frrukonsarkar@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  radius: 100,
+                  backgroundImage: NetworkImage(
+                      'https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
                 ),
-            
+                currentAccountPictureSize: Size(70, 70),
+                onDetailsPressed: () {
+                  MySnackBar('This is my profile', context);
+                },
+              ),
             ),
-            
-            
-            
-            ListTile(title: Text('Home'),leading: Icon(Icons.home), onTap: (){MySnackBar('This is home', context);},),
-            ListTile(title: Text('Contact'), leading: Icon(Icons.contact_emergency),onTap: (){MySnackBar('This is contact', context);}),
-            ListTile(title: Text('Profile'), leading: Icon(Icons.person),onTap: (){MySnackBar('This is profile', context);}),
-            ListTile(title: Text('Email'), leading: Icon(Icons.email),onTap: (){MySnackBar('This is email', context);},),
-            ListTile(title: Text('phone'), leading: Icon(Icons.phone), onTap: (){MySnackBar('This is phone', context);},),
+            ListTile(
+              title: Text('Home'),
+              leading: Icon(Icons.home),
+              onTap: () {
+                MySnackBar('This is home', context);
+              },
+            ),
+            ListTile(
+                title: Text('Contact'),
+                leading: Icon(Icons.contact_emergency),
+                onTap: () {
+                  MySnackBar('This is contact', context);
+                }),
+            ListTile(
+                title: Text('Profile'),
+                leading: Icon(Icons.person),
+                onTap: () {
+                  MySnackBar('This is profile', context);
+                }),
+            ListTile(
+              title: Text('Email'),
+              leading: Icon(Icons.email),
+              onTap: () {
+                MySnackBar('This is email', context);
+              },
+            ),
+            ListTile(
+              title: Text('phone'),
+              leading: Icon(Icons.phone),
+              onTap: () {
+                MySnackBar('This is phone', context);
+              },
+            ),
           ],
         ),
       ),
@@ -198,31 +223,57 @@ class Home extends StatelessWidget {
                 accountEmail: Text('frrukonsarkar@gmail.com'),
                 currentAccountPicture: CircleAvatar(
                   radius: 100,
-                  backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
+                  backgroundImage: NetworkImage(
+                      'https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),
                 ),
                 currentAccountPictureSize: Size(70, 70),
-                onDetailsPressed: (){MySnackBar('This is my profile', context);},
+                onDetailsPressed: () {
+                  MySnackBar('This is my profile', context);
+                },
               ),
-
             ),
-
-
-
-            ListTile(title: Text('Home'),leading: Icon(Icons.home), onTap: (){MySnackBar('This is home', context);},),
-            ListTile(title: Text('Contact'), leading: Icon(Icons.contact_emergency),onTap: (){MySnackBar('This is contact', context);}),
-            ListTile(title: Text('Profile'), leading: Icon(Icons.person),onTap: (){MySnackBar('This is profile', context);}),
-            ListTile(title: Text('Email'), leading: Icon(Icons.email),onTap: (){MySnackBar('This is email', context);},),
-            ListTile(title: Text('phone'), leading: Icon(Icons.phone), onTap: (){MySnackBar('This is phone', context);},),
+            ListTile(
+              title: Text('Home'),
+              leading: Icon(Icons.home),
+              onTap: () {
+                MySnackBar('This is home', context);
+              },
+            ),
+            ListTile(
+                title: Text('Contact'),
+                leading: Icon(Icons.contact_emergency),
+                onTap: () {
+                  MySnackBar('This is contact', context);
+                }),
+            ListTile(
+                title: Text('Profile'),
+                leading: Icon(Icons.person),
+                onTap: () {
+                  MySnackBar('This is profile', context);
+                }),
+            ListTile(
+              title: Text('Email'),
+              leading: Icon(Icons.email),
+              onTap: () {
+                MySnackBar('This is email', context);
+              },
+            ),
+            ListTile(
+              title: Text('phone'),
+              leading: Icon(Icons.phone),
+              onTap: () {
+                MySnackBar('This is phone', context);
+              },
+            ),
           ],
         ),
       ),
 
       // body
-      /*   body: Center(
-        */
-
-      //Text
-      /*  child: Text(
+  /*
+      body: Center(
+          //Text & Image
+          *//*  child: Text(
           'Hey this is Rukon, I have started new flutter course. I want build my dream app with flutter',
           maxLines: 2,
           style: TextStyle(
@@ -242,10 +293,10 @@ class Home extends StatelessWidget {
           fit: BoxFit.scaleDown,
         ),
         // child: Image.asset('images/rukon.jpg', width: 200, height: 300, fit: BoxFit.scaleDown,),
-       */
+       *//*
 
-      //Column
-      /*       child: Column(
+          //Column & Row
+          *//*       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -282,10 +333,10 @@ class Home extends StatelessWidget {
               ],
             )
           ],
-        ),*/
+        ),*//*
 
-      // Column
-      /*
+          // Column
+          *//*
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -448,10 +499,10 @@ class Home extends StatelessWidget {
                         borderSide: BorderSide(width: 1, color: Colors.grey)),
                     fillColor: Colors.green.shade50,
                     filled: true,
-              */
+              *//*
 
-      // prefix & suffix
-      /*    prefix: Column(
+          // prefix & suffix
+          *//*    prefix: Column(
                     children: [
                       Icon(Icons.add),
                       Icon(Icons.phone),
@@ -465,10 +516,10 @@ class Home extends StatelessWidget {
                       Icon(Icons.numbers),
                       Icon(Icons.remove_red_eye),
                     ],
-                  ),*/
+                  ),*//*
 
-      // prefixIcon & suffixIcon
-      /*
+          // prefixIcon & suffixIcon & Container
+          *//*
 
                   prefixIcon: Icon(Icons.person, color: Colors.green, size: 30,),
                   suffixIcon: Icon(Icons.remove_red_eye, color: Colors.red,),
@@ -488,18 +539,18 @@ class Home extends StatelessWidget {
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.red, width: 1),
-             */
+             *//*
 
-      //Border
-      /*   border: Border(
+          //Border
+          *//*   border: Border(
                   top: BorderSide(width: 2, color: Colors.black),
                   bottom: BorderSide(width: 2, color: Colors.red),
                   left: BorderSide(width: 2, color: Colors.blue),
                   right: BorderSide(width: 2, color: Colors.yellow),
-                ),*/
+                ),*//*
 
-      //DecorationImage
-      /*
+          //DecorationImage
+          *//*
                 image: DecorationImage(
                   image: AssetImage('images/rukon.jpg'),
                   fit: BoxFit.fill
@@ -516,10 +567,10 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
-      ),*/
+      ),*//*
 
-      //SingleChildScrollView
-      /*  body: SingleChildScrollView(
+          //SingleChildScrollView
+          *//*  body: SingleChildScrollView(
         child: Column(
           children: [
             Text('Rukon'),
@@ -533,10 +584,10 @@ class Home extends StatelessWidget {
             Text('Rukon'),
           ],
         ),
-      )*/
+      )*//*
 
-      //ListView
-      /*  body: ListView(
+          //ListView
+          *//*  body: ListView(
         children: [
           Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
           Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
@@ -570,33 +621,33 @@ class Home extends StatelessWidget {
           Text('Rukon', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
 
         ],
-      ),*/
+      ),*//*
 
-      //ListView.builder
-      /*  body: ListView.builder(
+          //ListView.builder
+          *//*  body: ListView.builder(
           itemCount: 50,
           itemBuilder: (context, index){
 
         return Text('${index+1}', style: TextStyle(fontSize: 20),);
-      }),*/
+      }),*//*
 
-      //ListView.builder
-      /* body: ListView.builder(
+          //ListView.builder
+          *//* body: ListView.builder(
           itemCount: studentList.length,
           itemBuilder: (context, index) {
             return Text(studentList[index]);
-          }),*/
+          }),*//*
 
-      //ListView.builder
-      /* body: ListView.builder(
+          //ListView.builder
+          *//* body: ListView.builder(
           itemCount: studentList.length,
           itemBuilder: (context, index) {
             return Padding(padding: EdgeInsets.all(16),
             child: Text(studentList[index]));
-          }),*/
+          }),*//*
 
-      //ListView.separated
-      /*  body: ListView.separated(
+          //ListView.separated
+          *//*  body: ListView.separated(
           itemBuilder: (context, index){
             return Center(child: Text(studentList[index]));
           },
@@ -609,10 +660,10 @@ class Home extends StatelessWidget {
               indent: 20,
             );
           },
-          itemCount: studentList.length),*/
+          itemCount: studentList.length),*//*
 
-      //GridView
-      /*body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          //GridView
+          *//*body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: [
           Text('Rukon', style: TextStyle(color: Colors.white, backgroundColor: Colors.green),),
           Text('Mim'),
@@ -621,10 +672,10 @@ class Home extends StatelessWidget {
           Text('Aklima'),
           Text('Liza'),
         ],
-      ),*/
+      ),*//*
 
-      //SingleChildScrollView & ListView.separated & GridView.builder
-      /* body: SingleChildScrollView(
+          //SingleChildScrollView & ListView.separated & GridView & Container
+          *//* body: SingleChildScrollView(
         child: Column(
           children: [
             ListView.separated(
@@ -683,8 +734,43 @@ class Home extends StatelessWidget {
                 }),
           ],
         ),
+      ),*//*
+          ),
+
+      */
+
+      // Container
+   /*   body: Container(
+        height: 200,
+        width: 200,
+        child: Text('Rukon', style: TextStyle(color: Colors.white),),
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(50),
+        padding: EdgeInsets.all(40),
+        decoration: BoxDecoration(
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.red, width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 20,
+              spreadRadius: 5,
+            )
+          ]
+        ),
       ),*/
+
+      //Row
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(height: 100, width: 100, child: Image.network('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),),
+          Container(height: 100, width: 100, child: Image.network('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),),
+          Container(height: 100, width: 100, child: Image.network('https://th.bing.com/th/id/OIP.1MOKCrKpcoPQdr33ec-isAAAAA?rs=1&pid=ImgDetMain'),),
+        ],
+      ),
+
     );
   }
 }
-
